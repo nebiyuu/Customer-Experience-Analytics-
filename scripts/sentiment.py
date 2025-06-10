@@ -1,5 +1,15 @@
 from textblob import TextBlob
 
+
+
+def clean_text(text):
+    """
+    Remove leading and trailing whitespace from text.
+    Converts input to string if not already.
+    """
+    return str(text).strip()
+
+
 def analyze_sentiment(text):
     try:
         polarity = TextBlob(text).sentiment.polarity
@@ -11,3 +21,4 @@ def analyze_sentiment(text):
             return 0
     except:
         return "ERROR"
+    
